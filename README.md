@@ -13,3 +13,5 @@ graph=[(meets[i][1]<=meets[j][0] or meets[i][0]>=meets[j][1])*1 for i in range(L
 ```
 
 The code is to implement the Bron-Kerbosch algorithm is based off a.u.r.'s code found [here](http://stackoverflow.com/questions/13904636/implementing-bron-kerbosch-algorithm-in-python).
+
+Important note: the greedy algorithm (choosing the first meeting to end, adding next compatible meeting with next earlist end time etc.) is considerably faster if all you want is the size of the largest clique and dont care about weights in the network.
