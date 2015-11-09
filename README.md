@@ -8,10 +8,8 @@ Consider a group of meetings. Say that meetings are nodes of a network, and two 
 First, setup the netowrk. If there are `n` meetings, the network will be represented here as an `n`-by-`n` matrix with elements denoting connections or no connections between meetings `i` and `j` by `1` and `0`. 
 
 ```
-for i in range(len(beg_list)):
-	for j in range(len(beg_list)):
-		if beg_list[i][1]<=beg_list[j][0] or beg_list[i][0]>=beg_list[j][1]:
-			M[i][j] = 1
+graph=[(meets[i][1]<=meets[j][0] or meets[i][0]>=meets[j][1])*1 for i in range(L) for j in range(L)]
+    graph=zip(*[iter(graph)]*L)
 ```
 
 The code is to implement the Bron-Kerbosch algorithm is based off a.u.r.'s code found [here](http://stackoverflow.com/questions/13904636/implementing-bron-kerbosch-algorithm-in-python).
